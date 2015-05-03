@@ -1,0 +1,37 @@
+<!--{{extend 'layout.html'}}-->
+<!--
+{{block header}}
+    <header class="container-fluid background">
+      <div class="jumbotron text-center">
+        {{if response.title:}}
+        <h1>{{=response.title}}
+          <small>{{=response.subtitle or ''}}</small></h1>
+        {{pass}}
+      </div>
+    </header>
+{{end}}-->
+<h2>Input form</h2>
+<form enctype="multipart/form-data"
+      action="{{=URL()}}" method="post">
+Name:
+<br>
+<input name="name" />
+<br>
+Age:
+<br>
+<input age="age" />
+<br>
+Diease:
+<br>
+<input diease="Diease" />
+<br>
+Since:
+<br>
+<input date="date"/>
+<br>
+Appointment:
+<br>
+<input type="submit" />
+</form>
+<h2>Submitted variables</h2>
+{{=BEAUTIFY(request.vars)}}
